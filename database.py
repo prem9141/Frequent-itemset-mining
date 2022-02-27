@@ -10,43 +10,6 @@ config = {
     'raise_on_warnings': True
 }
 
-TABLES = dict()
-
-TABLES['database1'] = (
-        "CREATE TABLE `database1` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-TABLES['database2'] = (
-        "CREATE TABLE `database2` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-TABLES['database3'] = (
-        "CREATE TABLE `database3` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-TABLES['database4'] = (
-        "CREATE TABLE `database4` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-TABLES['database5'] = (
-        "CREATE TABLE `database5` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
 
 class Database:
     def __init__(self):
@@ -138,13 +101,3 @@ class Database:
         except mysql.Error as err:
             print(err)
             exit(1)
-
-
-if __name__ == '__main__':
-
-    db = Database()
-    db.connect_database()
-    db.create_table(TABLES)
-    db.insert_records()
-    print(db.fetch_records())
-    db.close_connection()
