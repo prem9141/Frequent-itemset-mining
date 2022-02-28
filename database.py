@@ -27,6 +27,9 @@ class Database:
                 print(err)
 
     def create_database(self):
+        """
+        Creates the database
+        """
         try:
             self.cursor.execute(f"CREATE DATABASE {self.dbname} DEFAULT CHARACTER SET 'utf8mb4'")
         except mysql.Error as err:
@@ -34,6 +37,9 @@ class Database:
             exit(1)
 
     def connect_database(self):
+        """
+        Connects to the database if it exists else creates the database and connects to it
+        """
         try:
             self.cursor.execute(f'USE {self.dbname}')
         except mysql.Error as err:
@@ -47,6 +53,11 @@ class Database:
                 exit(1)
 
     def create_table(self, tables):
+        """
+        Creates the specified table in the database
+        :param dict tables: Tables to be created in the database. Dict keys contains the table name and value holds the
+         sql query
+        """
         self.tables = tables;
         try:
             for table in self.tables.keys():
@@ -58,6 +69,12 @@ class Database:
                 print(err.msg)
 
     def fetch_file_data(self, fname):
+        """
+        Reads the data from the file
+        :param str fname: File from which data has to be read
+        :return: File Contents
+        :rtype: list
+        """
         fname = "./" + fname + ".txt"
         records = list()
         with open(fname, 'r') as file:
@@ -68,6 +85,9 @@ class Database:
         return records
 
     def insert_records(self):
+        """
+        Inserts record into the table
+        """
         try:
             for table in self.tables:
                 add_insert = f"INSERT INTO {table} (TRANS_ID, ITEMS) VALUES (%s, %s)"
@@ -79,6 +99,10 @@ class Database:
             exit(1)
 
     def fetch_records(self):
+        """
+        Returns the table contents
+        :rtype: dict
+        """
         table_records = dict()
         try:
             for table in self.tables:
@@ -95,6 +119,9 @@ class Database:
             exit(1)
 
     def close_connection(self):
+        """
+        Closes the Cursor and Connection objects
+        """
         try:
             self.cnx.close()
             self.cursor.close()

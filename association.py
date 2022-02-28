@@ -14,6 +14,11 @@ class Association:
         self.rejected_association_rule = list()
 
     def scan_database(self):
+        """ Scans the database transactions and generates 1-Itemset
+
+        :return: 1-Itemset
+        :rtype: list
+        """
         item_set = list()
         for record in self.dataset:
             for item in record:
@@ -24,6 +29,11 @@ class Association:
         return item_set
 
     def generate_candidate_item_set(self, item_set):
+        """ Generate the Candidate Item-sets
+
+        :param list item_set: Contains list of item-set
+        :return: None
+        """
         candidate_item_set = dict()
         for record in self.dataset:
             for item in item_set:
@@ -36,6 +46,11 @@ class Association:
         self.candidate_item_set.append(candidate_item_set)
 
     def find_frequent_item_set(self, item_set):
+        """ Generate the Frequent Item-sets
+
+        :param list item_set: Contains list of item-set
+        :return: None
+        """
         frequent_item_set = dict()
         not_frequent_item_set = dict()
 
@@ -49,15 +64,31 @@ class Association:
         self.not_frequent_item_set.append(not_frequent_item_set)
 
     def check_if_subset_not_frequent(self, superset, k):
+        """ Checks if superset contains any non frequent subset
+
+        :param set superset: Contains the superset values
+        :param int k: Index Position
+        :return: True or False
+        :rtype: bool
+        """
         for subset in self.not_frequent_item_set[k - 2]:
             if subset.issubset(superset):
                 return True
         return False
 
     def get_support(self, item_set):
+        """ Returns the Support Value
+
+        :param set item_set: Itemset for which support value is to be determined
+        :return: Support Value
+        :rtype: float
+        """
         return self.frequent_item_set[len(item_set) - 1][item_set]
 
     def generate_association_rule(self):
+        """
+        Generates the association rule and checks if they meet the minimum support and confidence values
+        """
         for item_set in self.frequent_item_set[1:]:
             for items in item_set:
                 for item in items:
@@ -75,6 +106,9 @@ class Association:
                             [set(left_side_set), set(right_side_set), f'{item_support:.2f}%', f'{confidence:.2f}%'])
 
     def display_results(self):
+        """
+        Displays the Candidate, Frequent, Not Frequent and Association rules using Tabulate
+        """
         for i in range(len(self.candidate_item_set)):
             heading = f'\nCandidate {i+1}-Itemsets\n'
             print(tabulate([[heading]], tablefmt="rst"))

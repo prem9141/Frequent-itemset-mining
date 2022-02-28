@@ -11,6 +11,7 @@ if __name__ == "__main__":
     apriori_execution_time = list()
     bruteforce_execution_time = list()
 
+    # Table Structure
     TABLES['database1'] = (
         "CREATE TABLE `database1` ("
         "  `trans_id` int NOT NULL AUTO_INCREMENT,"
@@ -64,7 +65,7 @@ if __name__ == "__main__":
     db = Database()
     db.connect_database()
     db.create_table(TABLES)
-    # db.insert_records()
+    db.insert_records()
 
     # Fetch the records from each database and run Apriori and Brute Force Algorithm
     records = db.fetch_records()
@@ -84,8 +85,10 @@ if __name__ == "__main__":
         heading = f'\nCalculating Association rules using Apriori Algorithm\n'
         print(tabulate([[heading]], tablefmt="grid"))
         apriori = Apriori(transactions, min_support, min_confidence)
+        # Start the timer
         start = time.perf_counter()
         apriori.execute_algorithm()
+        # Stop the timer
         stop = time.perf_counter()
         apriori_execution_time.append(stop-start)
 
@@ -93,16 +96,18 @@ if __name__ == "__main__":
         heading = f'\nCalculating Association rules using Brute Force Algorithm\n'
         print(tabulate([[heading]], tablefmt="grid"))
         bruteforce = BruteForce(transactions, min_support, min_confidence)
+        # Start the timer
         start = time.perf_counter()
         bruteforce.execute_algorithm()
+        # Stop the timer
         stop = time.perf_counter()
         bruteforce_execution_time.append(stop - start)
 
     # Close the DB connection
     db.close_connection()
 
+    # Display the execution time comparison between the two algorithms
     print(tabulate([["Execution Time Comparison"]], tablefmt="grid"))
-
     execution_time = list(zip(TABLES.keys(), apriori_execution_time, bruteforce_execution_time))
     print(tabulate(execution_time, headers=["Database Used", "Apriori Algorithm",
                                             "Brute Force Algorithm"], tablefmt="fancy_grid"))
