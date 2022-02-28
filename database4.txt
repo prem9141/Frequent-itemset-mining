@@ -1,20 +1,20 @@
-1 Shirt, Basket, Gloves, Cap
-2 Jacket, Gloves, Shirt, Bag   Ball
-3 Cap, Bag   Ball
-4 Jacket, Bag   Ball, Gloves, Shirt, Bottle, Cap
-5 Jacket, Gloves, Shirt, Basket
-6 Gloves, Bag   Ball, Bottle, Cap
-7 Shoes, Bottle, Socks, Cap
-8 Jacket, Bottle, Socks
-9 Socks, Bag   Ball, Bottle
-10 Jacket, Bottle, Basket, Bag   Ball
-11 Bag   Ball, Shirt, Socks, Cap
-12 Socks, Bottle, Gloves, Bag   Ball, Cap
-13 Basket, Gloves, Jacket, Bottle, Bag   Ball
-14 Cap, Bottle, Socks, Bag   Ball, Shoes
-15 Bag   Ball, Gloves, Cap, Basket
-16 Shirt, Gloves, Bag   Ball, Cap, Shoes
-17 Bag   Ball, Jacket, Shirt, Socks, Gloves, Shoes
-18 Shirt, Shoes, Socks, Basket, Bottle
-19 Shirt, Bag   Ball, Cap, Socks, Basket, Jacket
-20 Bag   Ball, Socks, Bottle, Cap
+1 Tea, Gloves, Water
+2 Shoes, Gloves, Juice, Cream, Watch, Yogurt
+3 Shoes, Cream, Meat, Watch, Wine, Water
+4 Bottle, Gloves, Soap, Eggs, Nuts
+5 Doughs, Shirt, Gloves, ProteinShake, Popcorn, Umbrella
+6 Bottle, Gloves, Cheese, Milk, Soda, Nuts
+7 Coffee
+8 Doughs
+9 Popcorn, Cream, Dips, Butter
+10 Cheese, Shoes
+11 Pretzels, Butter
+12 Doughs, Dips, Meat, Pretzels, Popcorn, Eggs
+13 Milk
+14 Bottle, Pretzels
+15 Bottle, Shoes, Tea, Watch, Pretzels, Soda
+16 Bottle, Icecream, Wine
+17 Juice, Umbrella, Nuts, Water
+18 Soap
+19 Doughs, Butter, Detergent, Soda, Water
+20 Diaper, Pretzels, Umbrella, Milk

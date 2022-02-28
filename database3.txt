@@ -1,20 +1,20 @@
-1 Milk, Dips, Butter
-2 Icecream, Dips, Cheese, Milk, Cream, Butter
-3 Cheese, Doughs, Yogurt, Icecream, Butter
-4 Cheese, Eggs, Milk, Icecream, Butter, Cream, Yogurt, Doughs
-5 Icecream, Doughs, Cream, Butter, Dips
-6 Butter, Dips, Margarine, Doughs
-7 Cream, Icecream, Doughs, Cheese, Butter, Yogurt
-8 Cheese
-9 Yogurt, Icecream, Margarine, Milk, Eggs, Butter
-10 Margarine, Butter, Dips, Milk
-11 Doughs, Margarine, Milk
-12 Yogurt, Margarine, Icecream, Cream
-13 Dips
-14 Butter, Yogurt, Margarine
-15 Eggs, Dips, Yogurt, Milk, Icecream, Cheese, Doughs
-16 Dips, Milk, Cheese, Cream
-17 Milk, Butter, Dips, Margarine, Yogurt
-18 Cheese, Butter
-19 Eggs, Cheese, Doughs, Milk, Icecream
-20 Milk, Icecream, Dips, Cheese, Cream
+1 Coffee
+2 Watch, Meat, ProteinShake, Wine, Soda, Shirt
+3 Umbrella, Milk, Icecream, Juice
+4 Water, ProteinShake
+5 Detergent
+6 Shirt
+7 Popcorn, Watch, Soda, Diaper, Cheese
+8 Dips
+9 Shirt, Cream
+10 Cheese, Bottle, Soap, Pretzels, Shirt, Nuts
+11 Diaper, Watch, Soda, Juice
+12 Water, Meat
+13 Eggs, Milk, Soda, Detergent, Dips
+14 Bottle, Pretzels
+15 Bottle, Tea, Soap, Soda
+16 Yogurt, Soap, Tea, Juice
+17 Butter
+18 Icecream, Popcorn, Coffee
+19 Cookies
+20 Nuts

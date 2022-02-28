@@ -1,20 +1,20 @@
-1 Crackers, Nuts, Chips Cookies
-2 Pretzels, Pudding, MeatSticks, Spreads
-3 Pudding, Pretzels, Nuts, Crackers, Dips
-4 MeatSticks, Pretzels
-5 Chips Cookies, Pudding, Popcorn, Crackers, Dips, Pretzels, Spreads
-6 Chips Cookies, Pretzels, Pudding
-7 Pudding, Chips Cookies, Nuts, Popcorn, Pretzels, Dips
-8 MeatSticks, Pretzels, Dips
-9 Popcorn
-10 MeatSticks, Pudding, Crackers, Popcorn
-11 MeatSticks, Popcorn, Pretzels, Dips, Chips Cookies
-12 Chips Cookies, Crackers, Dips, Nuts, Pretzels, Popcorn
-13 MeatSticks
-14 Pretzels, Pudding, Nuts, Crackers
-15 Chips Cookies, Pretzels, Dips, Pudding
-16 Chips Cookies, Dips, Nuts, MeatSticks, Pudding, Pretzels
-17 Chips Cookies, Dips, Nuts, Crackers
-18 Crackers
-19 Pretzels, Chips Cookies, Crackers, Pudding, Popcorn, Dips
-20 Popcorn, Chips Cookies, Nuts
+1 Water, Cheese
+2 Gloves
+3 Cookies, Watch, Tea, Shoes, Coffee, Soda
+4 Pretzels, Diaper, Cheese
+5 Meat, Shirt, Detergent, Icecream, Cookies
+6 Water, Milk, Soap
+7 Milk, Doughs
+8 Yogurt, Watch, Coffee
+9 Juice
+10 Butter, Cheese, Cream, Detergent, Pretzels
+11 Soap, ProteinShake, Detergent, Nuts, Pretzels
+12 Gloves, Pretzels, Yogurt
+13 ProteinShake, Watch, Milk, Icecream
+14 Umbrella, Coffee, Popcorn
+15 ProteinShake, Cream, Milk, Soda
+16 Dips, Gloves, Watch, Cheese, Water
+17 Water, Meat
+18 Dips, Doughs, Wine, Shoes, Nuts, Milk
+19 Watch
+20 Juice

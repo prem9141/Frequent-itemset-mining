@@ -1,20 +1,20 @@
-1 sheets, watch, water, deodorant, soap
-2 watch
-3 watch, diaper, shoes, deodorant
-4 watch, deodorant, water
-5 soap, umbrella, water, diaper, detergent, shoes
-6 water, sheets, watch, cream, detergent, diaper, deodorant
-7 diaper, umbrella, watch, water, soap, detergent
-8 water, watch, cream, deodorant
-9 deodorant, cream, diaper, umbrella, soap
-10 shoes, cream, watch, umbrella, sheets, water
-11 cream, watch, shoes
-12 cream, detergent
-13 water, deodorant, diaper, soap, umbrella, sheets
-14 shoes, diaper, watch
-15 sheets, water, shoes
-16 watch
-17 water, soap, watch, deodorant, umbrella
-18 shoes, sheets
-19 cream, detergent, sheets, watch
-20 diaper, soap, shoes, water, watch, sheets
+1 Cheese, Yogurt, Nuts, Butter
+2 Meat, Dips, Popcorn, Bottle, Shirt, ProteinShake
+3 ProteinShake, Doughs, Cream
+4 Watch, Gloves, Milk, Diaper
+5 Detergent, Popcorn, Pretzels, Soap, Juice
+6 Cheese, Pretzels
+7 Icecream, Gloves, Cheese, Yogurt, Dips
+8 Eggs, Doughs
+9 Diaper, Water, Cream, Tea, Bottle
+10 Detergent
+11 Eggs, Milk, Meat, Dips
+12 Icecream, Coffee, Yogurt
+13 Tea
+14 Water
+15 Icecream, Nuts, Gloves, Eggs, Shirt
+16 Water, Umbrella, Milk, Gloves, Bottle, ProteinShake
+17 Meat, Gloves, Soap, Bottle, Shirt
+18 Meat, Gloves, Popcorn, Shoes, Watch
+19 Coffee, Yogurt, Meat, Doughs
+20 Water, Milk, Umbrella, Eggs, Bottle
