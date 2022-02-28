@@ -1,0 +1,20 @@
+1 sheets, watch, water, deodorant, soap
+2 watch
+3 watch, diaper, shoes, deodorant
+4 watch, deodorant, water
+5 soap, umbrella, water, diaper, detergent, shoes
+6 water, sheets, watch, cream, detergent, diaper, deodorant
+7 diaper, umbrella, watch, water, soap, detergent
+8 water, watch, cream, deodorant
+9 deodorant, cream, diaper, umbrella, soap
+10 shoes, cream, watch, umbrella, sheets, water
+11 cream, watch, shoes
+12 cream, detergent
+13 water, deodorant, diaper, soap, umbrella, sheets
+14 shoes, diaper, watch
+15 sheets, water, shoes
+16 watch
+17 water, soap, watch, deodorant, umbrella
+18 shoes, sheets
+19 cream, detergent, sheets, watch
+20 diaper, soap, shoes, water, watch, sheets

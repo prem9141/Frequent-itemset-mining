@@ -1,3 +1,6 @@
+from tabulate import tabulate
+
+
 class Association:
     def __init__(self, data, support, confidence):
         self.dataset = data
@@ -65,37 +68,55 @@ class Association:
                     confidence = item_support / self.get_support(left_side_set) * 100
 
                     if confidence >= self.min_confidence:
-                        self.selected_association_rule.append(f'{set(left_side_set)} ==> {set(right_side_set)} [{item_support:.2f}%,{confidence:.2f}%]')
+                        self.selected_association_rule.append(
+                            [set(left_side_set), set(right_side_set), f'{item_support:.2f}%', f'{confidence:.2f}%'])
                     else:
                         self.rejected_association_rule.append(
-                            f'{set(left_side_set)} ==> {set(right_side_set)} [{item_support:.2f}%,{confidence:.2f}%]')
+                            [set(left_side_set), set(right_side_set), f'{item_support:.2f}%', f'{confidence:.2f}%'])
 
     def display_results(self):
         for i in range(len(self.candidate_item_set)):
-            print(f'******************************')
-            print(f'    Candidate {i+1}-item sets')
-            print(f'******************************')
+            heading = f'\nCandidate {i+1}-Itemsets\n'
+            print(tabulate([[heading]], tablefmt="rst"))
+            candidate_tabulate_list = []
             for item in self.candidate_item_set[i]:
-                print(set(item), f'{self.candidate_item_set[i][item]:.2f}%')
-            print(f'****************************')
-            print(f'    Frequent {i + 1}-item sets')
-            print(f'****************************')
-            for item in self.frequent_item_set[i]:
-                print(set(item), f'{self.frequent_item_set[i][item]:.2f}%')
-            print(f'*********************************')
-            print(f'     Not Frequent {i + 1}-item sets')
-            print(f'*********************************')
-            for item in self.not_frequent_item_set[i]:
-                print(set(item), f'{self.not_frequent_item_set[i][item]:.2f}%')
+                candidate_tabulate_list.append([set(item), f'{self.candidate_item_set[i][item]:.2f}%'])
+            print(tabulate(candidate_tabulate_list, tablefmt="pretty", headers=["Itemset", "Support"], stralign="left"))
 
-        print(f'**********************************')
-        print(f'    Rejected Association Rules')
-        print(f'**********************************')
-        for item in self.rejected_association_rule:
-            print(item)
+            heading = f'\nFrequent {i + 1}-Itemsets\n'
+            print(tabulate([[heading]], tablefmt="rst"))
+            frequent_tabulate_list = []
+            if len(self.frequent_item_set[i]) >= 1:
+                for item in self.frequent_item_set[i]:
+                    frequent_tabulate_list.append([set(item), f'{self.frequent_item_set[i][item]:.2f}%'])
+                print(tabulate(frequent_tabulate_list, tablefmt="pretty",
+                               headers=["Itemset", "Support"], stralign="left"))
+            else:
+                print("None")
 
-        print(f'**********************************')
-        print(f'    Accepted Association Rules')
-        print(f'**********************************')
-        for item in self.selected_association_rule:
-            print(item)
+            heading = f'\nNot Frequent {i + 1}-Itemsets\n'
+            print(tabulate([[heading]], tablefmt="rst"))
+            not_frequent_tabulate_list = []
+            if len(self.not_frequent_item_set[i]) >= 1:
+                for item in self.not_frequent_item_set[i]:
+                    not_frequent_tabulate_list.append([set(item), f'{self.not_frequent_item_set[i][item]:.2f}%'])
+                print(tabulate(not_frequent_tabulate_list, tablefmt="pretty",
+                               headers=["Itemset", "Support"], stralign="left"))
+            else:
+                print("None")
+
+        heading = f'\nRejected Association Rules\n'
+        print(tabulate([[heading]], tablefmt="grid"))
+        if len(self.rejected_association_rule) >= 1:
+            print(tabulate(self.rejected_association_rule, tablefmt="fancy_grid",
+                  headers=["Antecedent", "Consequent", "Support", "Confidence"]))
+        else:
+            print("None")
+
+        heading = f'\nAccepted Association Rules\n'
+        print(tabulate([[heading]], tablefmt="grid"))
+        if len(self.selected_association_rule) >= 1:
+            print(tabulate(self.selected_association_rule, tablefmt="fancy_grid",
+                  headers=["Antecedent", "Consequent", "Support", "Confidence"]))
+        else:
+            print("None")

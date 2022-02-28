@@ -1,0 +1,20 @@
+1 Shirt, Basket, Gloves, Cap
+2 Jacket, Gloves, Shirt, Bag   Ball
+3 Cap, Bag   Ball
+4 Jacket, Bag   Ball, Gloves, Shirt, Bottle, Cap
+5 Jacket, Gloves, Shirt, Basket
+6 Gloves, Bag   Ball, Bottle, Cap
+7 Shoes, Bottle, Socks, Cap
+8 Jacket, Bottle, Socks
+9 Socks, Bag   Ball, Bottle
+10 Jacket, Bottle, Basket, Bag   Ball
+11 Bag   Ball, Shirt, Socks, Cap
+12 Socks, Bottle, Gloves, Bag   Ball, Cap
+13 Basket, Gloves, Jacket, Bottle, Bag   Ball
+14 Cap, Bottle, Socks, Bag   Ball, Shoes
+15 Bag   Ball, Gloves, Cap, Basket
+16 Shirt, Gloves, Bag   Ball, Cap, Shoes
+17 Bag   Ball, Jacket, Shirt, Socks, Gloves, Shoes
+18 Shirt, Shoes, Socks, Basket, Bottle
+19 Shirt, Bag   Ball, Cap, Socks, Basket, Jacket
+20 Bag   Ball, Socks, Bottle, Cap
