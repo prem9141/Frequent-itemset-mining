@@ -110,6 +110,8 @@ class Association:
         Displays the Candidate, Frequent, Not Frequent and Association rules using Tabulate
         """
         for i in range(len(self.candidate_item_set)):
+            if len(self.candidate_item_set[i]) == 0:
+                continue
             heading = f'\nCandidate {i+1}-Itemsets\n'
             print(tabulate([[heading]], tablefmt="rst"))
             candidate_tabulate_list = []
