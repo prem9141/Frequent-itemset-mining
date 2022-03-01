@@ -130,24 +130,24 @@ class Association:
             else:
                 print("None")
 
-            heading = f'\nNot Frequent {i + 1}-Itemsets\n'
-            print(tabulate([[heading]], tablefmt="rst"))
-            not_frequent_tabulate_list = []
-            if len(self.not_frequent_item_set[i]) >= 1:
-                for item in self.not_frequent_item_set[i]:
-                    not_frequent_tabulate_list.append([set(item), f'{self.not_frequent_item_set[i][item]:.2f}%'])
-                print(tabulate(not_frequent_tabulate_list, tablefmt="pretty",
-                               headers=["Itemset", "Support"], stralign="left"))
-            else:
-                print("None")
+            # heading = f'\nNot Frequent {i + 1}-Itemsets\n'
+            # print(tabulate([[heading]], tablefmt="rst"))
+            # not_frequent_tabulate_list = []
+            # if len(self.not_frequent_item_set[i]) >= 1:
+            #     for item in self.not_frequent_item_set[i]:
+            #         not_frequent_tabulate_list.append([set(item), f'{self.not_frequent_item_set[i][item]:.2f}%'])
+            #     print(tabulate(not_frequent_tabulate_list, tablefmt="pretty",
+            #                    headers=["Itemset", "Support"], stralign="left"))
+            # else:
+            #     print("None")
 
-        heading = f'\nRejected Association Rules\n'
-        print(tabulate([[heading]], tablefmt="grid"))
-        if len(self.rejected_association_rule) >= 1:
-            print(tabulate(self.rejected_association_rule, tablefmt="fancy_grid",
-                  headers=["Antecedent", "Consequent", "Support", "Confidence"]))
-        else:
-            print("None")
+        # heading = f'\nRejected Association Rules\n'
+        # print(tabulate([[heading]], tablefmt="grid"))
+        # if len(self.rejected_association_rule) >= 1:
+        #     print(tabulate(self.rejected_association_rule, tablefmt="fancy_grid",
+        #           headers=["Antecedent", "Consequent", "Support", "Confidence"]))
+        # else:
+        #     print("None")
 
         heading = f'\nAccepted Association Rules\n'
         print(tabulate([[heading]], tablefmt="grid"))

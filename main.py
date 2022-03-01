@@ -6,51 +6,12 @@ from bruteforce import BruteForce
 from tabulate import tabulate
 
 if __name__ == "__main__":
-    TABLES = dict()
-    execution_time = []
-    apriori_execution_time = list()
-    bruteforce_execution_time = list()
-
-    # Table Structure
-    TABLES['database1'] = (
-        "CREATE TABLE `database1` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-    TABLES['database2'] = (
-        "CREATE TABLE `database2` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-    TABLES['database3'] = (
-        "CREATE TABLE `database3` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-    TABLES['database4'] = (
-        "CREATE TABLE `database4` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
-
-    TABLES['database5'] = (
-        "CREATE TABLE `database5` ("
-        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
-        "  `items` varchar(255) NOT NULL,"
-        "  PRIMARY KEY (`trans_id`)"
-        ") ENGINE=InnoDB")
 
     # Read Minimum Support and Confidence values from command line
     try:
-        min_support = float(sys.argv[1])
-        min_confidence = float(sys.argv[2])
+        min_support = float(sys.argv[2])
+        min_confidence = float(sys.argv[3])
+        table_name = sys.argv[1]
 
         if ((min_support <= 0 or min_confidence <= 0) or
                 (min_support > 100 or min_confidence > 100)):
@@ -61,14 +22,10 @@ if __name__ == "__main__":
         print(f'Note: Minimum Support and confidence should be an integer or a floating point value')
         exit(1)
 
-    # Connect to the Database and Create items
+    # Connect to the Database and fetch records
     db = Database()
     db.connect_database()
-    db.create_table(TABLES)
-    db.insert_records()
-
-    # Fetch the records from each database and run Apriori and Brute Force Algorithm
-    records = db.fetch_records()
+    records = db.fetch_records(table_name)
 
     for record in records:
         # Display Database Transactions
@@ -90,7 +47,7 @@ if __name__ == "__main__":
         apriori.execute_algorithm()
         # Stop the timer
         stop = time.perf_counter()
-        apriori_execution_time.append(stop-start)
+        apriori_execution_time = stop-start
 
         # Run Brute Force Algorithm
         heading = f'\nCalculating Association rules using Brute Force Algorithm\n'
@@ -101,13 +58,13 @@ if __name__ == "__main__":
         bruteforce.execute_algorithm()
         # Stop the timer
         stop = time.perf_counter()
-        bruteforce_execution_time.append(stop - start)
+        bruteforce_execution_time = stop - start
 
     # Close the DB connection
     db.close_connection()
 
     # Display the execution time comparison between the two algorithms
     print(tabulate([["Execution Time Comparison"]], tablefmt="grid"))
-    execution_time = list(zip(TABLES.keys(), apriori_execution_time, bruteforce_execution_time))
-    print(tabulate(execution_time, headers=["Database Used", "Apriori Algorithm",
-                                            "Brute Force Algorithm"], tablefmt="fancy_grid"))
+    print(tabulate([[table_name.upper(), apriori_execution_time, bruteforce_execution_time]],
+                   headers=["Database Used", "Apriori Algorithm (Seconds)",
+                            "Brute Force Algorithm (Seconds)"], tablefmt="fancy_grid"))

@@ -98,21 +98,20 @@ class Database:
             print(err)
             exit(1)
 
-    def fetch_records(self):
+    def fetch_records(self, table):
         """
         Returns the table contents
         :rtype: dict
         """
         table_records = dict()
         try:
-            for table in self.tables:
-                self.cursor.execute(f"SELECT ITEMS FROM {table}")
-                items_list = list()
-                for items in self.cursor:
-                    for item in items:
-                        list_split = item.split(", ")
-                        items_list.append(set(list_split))
-                table_records[table] = items_list
+            self.cursor.execute(f"SELECT ITEMS FROM {table}")
+            items_list = list()
+            for items in self.cursor:
+                for item in items:
+                    list_split = item.split(", ")
+                    items_list.append(set(list_split))
+            table_records[table] = items_list
             return table_records
         except mysql.Error as err:
             print(err)
@@ -128,3 +127,48 @@ class Database:
         except mysql.Error as err:
             print(err)
             exit(1)
+
+
+if __name__ == "__main__":
+    TABLES = dict()
+
+    # Table Structure
+    TABLES['database1'] = (
+        "CREATE TABLE `database1` ("
+        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
+        "  `items` varchar(255) NOT NULL,"
+        "  PRIMARY KEY (`trans_id`)"
+        ") ENGINE=InnoDB")
+
+    TABLES['database2'] = (
+        "CREATE TABLE `database2` ("
+        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
+        "  `items` varchar(255) NOT NULL,"
+        "  PRIMARY KEY (`trans_id`)"
+        ") ENGINE=InnoDB")
+
+    TABLES['database3'] = (
+        "CREATE TABLE `database3` ("
+        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
+        "  `items` varchar(255) NOT NULL,"
+        "  PRIMARY KEY (`trans_id`)"
+        ") ENGINE=InnoDB")
+
+    TABLES['database4'] = (
+        "CREATE TABLE `database4` ("
+        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
+        "  `items` varchar(255) NOT NULL,"
+        "  PRIMARY KEY (`trans_id`)"
+        ") ENGINE=InnoDB")
+
+    TABLES['database5'] = (
+        "CREATE TABLE `database5` ("
+        "  `trans_id` int NOT NULL AUTO_INCREMENT,"
+        "  `items` varchar(255) NOT NULL,"
+        "  PRIMARY KEY (`trans_id`)"
+        ") ENGINE=InnoDB")
+
+    db = Database()
+    db.connect_database()
+    db.create_table(TABLES)
+    db.insert_records()
